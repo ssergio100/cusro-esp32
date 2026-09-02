@@ -8,6 +8,13 @@ verdade**: o **ST7789** — aqueles displays TFT coloridos (de 1,3", 1,14" ou
 mostrar **texto, formas e uma cor de fundo** (e, de quebra, uma "imagem"
 simples).
 
+> **Nota:** o **ST7789** é o nosso **exemplo** de display gráfico SPI. É o
+> mais comum, por isso o usamos. Mas o que você aprende aqui se aplica a
+> quase qualquer display TFT colorido que use SPI (o controlador muda um
+> pouco, a biblioteca também, mas a ideia de ligar por SPI e desenhar com a
+> GFX é a mesma). **Não precisa ter exatamente esse modelo** — use o display
+> que você conseguir, do tipo descrito abaixo.
+
 Por que isso é útil? É um salto grande de visual: em vez de um display de
 poucos caracteres (OLED da Aula 09), temos uma **tela colorida** cheia de
 pixels, ideal para painéis, jogos pequenos e interfaces.

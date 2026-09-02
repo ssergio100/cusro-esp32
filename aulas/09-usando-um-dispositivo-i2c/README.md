@@ -6,6 +6,13 @@ Na Aula 08 aprendemos a **encontrar** dispositivos I2C e seus endereços.
 Nesta aula vamos **usar um dispositivo I2C de verdade** para fazer algo útil:
 vamos mostrar **texto em um pequeno display OLED** (SSD1306).
 
+> O **display OLED SSD1306** é o nosso **exemplo** de dispositivo I2C — é
+> barato e muito comum, por isso usamos ele. Mas a **ideia central** aqui é
+> **usar um dispositivo I2C com uma biblioteca**, então **serve qualquer
+> dispositivo I2C que você tiver** (o método é o mesmo: achar o endereço,
+> instalar a biblioteca certa e usar). Não compre nada especial — use o que
+> já tem ou o que for mais fácil para você encontrar.
+
 Por que isso é útil? Um display dá ao ESP32 um jeito de **mostrar informações
 para você** sem precisar do computador. É o primeiro passo para fazer um
 "painel" ou um dispositivo compacto. E, de quebra, você vai usar uma

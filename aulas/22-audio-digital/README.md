@@ -96,15 +96,20 @@ na hora de ligar.
 ## Material necessário
 
 - ESP32;
-- módulo amplificador **MAX98357A** (I2S) ou similar;
+- um **módulo amplificador de áudio I2S** — vamos mostrar o **MAX98357A**
+  como **exemplo**, mas **serve qualquer módulo I2S que use os mesmos 3 fios
+  de dados (BCLK, LRC, DIN)**. Não precisa ser esse modelo específico;
 - um **alto‑falante/fone** pequeno (8 Ω, com o módulo) ou o conector do
   módulo;
 - cabos **jumper**;
 - Monitor Serial (115200).
 
-> O **MAX98357A** é um módulo bem comum e barato para I2S: já tem o
-> amplificador e a conversão embutidos. Você só conecta 3 fios de dados
-> (BCLK, LRC, DIN) + alimentação e liga um alto‑falante.
+> O **MAX98357A** (citado como exemplo) é um módulo bem comum e barato para
+> I2S: já tem o amplificador e a conversão embutidos. Você só conecta 3 fios
+> de dados (BCLK, LRC, DIN) + alimentação e liga um alto‑falante. **Se o seu
+> módulo for diferente, não tem problema**: siga a ficha dele e os nomes dos
+> pinos que aparecem nele (BCLK/LRC/DIN ou equivalentes). O código desta aula
+> só muda nos **números dos pinos** que você colocar.
 
 ## Ligação (MAX98357A)
 

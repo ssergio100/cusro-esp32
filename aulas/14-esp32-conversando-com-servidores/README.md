@@ -48,6 +48,11 @@ O ESP32 **pede** e mostra o que recebe. Isso é um **HTTP GET**: uma
 conversar por HTTP. Pense nela como um **garçom de aplicativos**: você pede
 um dado e ele te traz, já no formato certo para o programa entender.
 
+**Onde o dado mora?** Ele **não está no ESP32** nem em nada que você montou.
+Ele está **guardado em um servidor na internet** (em algum lugar remoto).
+O ESP32 **pede** e o servidor **envia** pela rede. Toda a "leitura" desta
+aula acontece **na web** — do ESP32 até o servidor e de volta.
+
 Para esta aula, vamos usar uma **API pública e gratuita** que não exige
 chave secreta. Um exemplo comum é uma API de **citações** ou de **hora/cotação**.
 Use um endpoint público simples e estável.
@@ -178,6 +183,12 @@ Encerra a conexão (libera os recursos).
 No Serial, você deve ver o **código de resposta** (geralmente `200` = tudo
 certo) e, abaixo, o **texto** que a API devolveu. O formato desse texto
 depende da API — pode ser **JSON** (vamos ver já já).
+
+> **Deixe claro:** o que aparece aqui **não veio de nenhum sensor ou parte
+> da sua bancada**. Esse texto foi **baixado da internet** — um servidor
+> remoto respondeu ao pedido do ESP32 (HTTP GET). O ESP32 só recebe e mostra.
+> Se quiser confirmar, **abra a mesma URL num navegador do computador**: é o
+> mesmo conteúdo que o ESP32 está lendo.
 
 Se aparecer **erro de conexão** (código negativo), confira a rede e a URL.
 
@@ -334,9 +345,10 @@ Agora, o desafio:
 
 1. **Extraia um número**: se a sua API tem um campo numérico, mude o código
    para ler com `int valor = doc["campo"];` e mostre.
-2. **Mostre em um display**: combine com a Aula 11 (ST7789) e mostre o valor
-   extraído **na tela** em vez de só no Serial. Assim você tem um "painel"
-   que busca dados do mundo.
+2. **Mostre em um display**: combine com as Aulas 09 ou 11 (o display OLED ou
+   o gráfico que você tiver) e mostre o valor extraído **na tela** em vez de
+   só no Serial. Assim você tem um "painel" que busca dados **do mundo
+   (internet)**.
 3. **Mude a API**: use outra API pública e ajuste os nomes dos campos para
    extrair uma informação diferente.
 

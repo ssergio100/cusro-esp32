@@ -33,15 +33,27 @@ No final desta aula, você vai entender:
 **O que o painel vai fazer?**
 
 1. Conectar ao **Wi‑Fi** (Aula 12).
-2. Buscar a **hora certa da internet** (via **NTP**).
-3. Mostrar a **hora** no **display ST7789** (Aula 11).
+2. Buscar a **hora certa da internet** (via **NTP**) — o relógio vem **de um
+   servidor na internet**, e não é calculado pelo ESP32 nem lido de nenhum
+   sensor local.
+3. Mostrar a hora em um **display** — vamos usar o **ST7789** (Aula 11) como
+   exemplo, mas **serve qualquer display que você já tenha** das aulas 09 ou
+   11 (ou, se quiser simplificar, até sem display, vendo tudo no Serial).
 4. Um **botão** alterna entre mostrar a hora e mostrar outra informação
-   (ex.: temperatura/uma API simples da Aula 14).
+   **vinda também da internet** (ex.: temperatura de uma API simples da
+   Aula 14). Em ambos os modos, os dados chegam **pela rede** — o ESP32 só
+   baixa e mostra.
 5. **Salvar** a última escolha (hora ou outra info) com **Preferences**
    (Aula 19), para que, ao religar, o painel volte ao modo que você usou.
 6. Avisos no **Monitor Serial** para diagnóstico (Aula 07).
 
 Isso usa quase tudo: SPI, botão, Wi‑Fi, HTTP, NTP, Preferences, display.
+
+> **Deixe claro:** as **informações** (hora do NTP e a "outra informação" da
+> API) vêm **da internet**. O ESP32 **não adivinha** nem gera esses dados —
+> ele **pede** a um servidor remoto e só mostra o que recebeu, como um
+> "navegador automático". Isso é diferente de, por exemplo, ler um
+> potenciômetro (Aula 06), onde o valor vem de um **sensor local**.
 
 ## Desenhando em blocos (antes do código)
 
@@ -49,13 +61,17 @@ Vamos desenhar os **blocos** do sistema num diagrama simples. Isso ajuda a ver
 as partes antes de programar:
 
 ```
-[ Botão ] --> [ ESP32 ] --> [ Display ST7789 ]
+[ Botão ] --> [ ESP32 ] --> [ Display (ex.: ST7789) ]
                 |   ^
                 |   +--- Preferences (salva o modo)
                 |
                 v
-            [ Wi-Fi ] --> [ NTP: hora ] e [ API: outra info ]
+            [ Wi-Fi ] --> [ NTP (servidor de hora) ] e [ API (servidor web) ]
 ```
+
+> Os dois quadros da direita (**NTP** e **API**) são **servidores na
+> internet**. O WiFi apenas liga o ESP32 para ele **conversar com eles**. Com
+> ou sem display, o que o painel mostra vem **de lá**.
 
 Pense em cada bloco como uma **função** no código:
 
@@ -75,11 +91,23 @@ cada uma.**
 ## Material necessário
 
 - **ESP32**;
-- **display ST7789** (Aula 11);
-- um **botão** (Aula 03);
+- um **display** — usaremos o **ST7789** da Aula 11 como exemplo, mas **serve
+  qualquer display que você já tenha** (Aula 09 OLED ou Aula 11). É preferível
+  ter um, pois os exemplos de código abaixo desenham na tela. **Se você não
+  tiver nenhum display, não trave aqui**: você pode acompanhar o **mesmo**
+  conceito vendo tudo no Monitor Serial e só ignorar os trechos de
+  desenho (`tela.*`) — o verdadeiro foco das etapas é a **internet** e a
+  **organização**, não o display em si;
+- um **botão** (Aula 03) — também opcional, se quiser simplificar;
 - **Wi‑Fi** (Aula 12);
 - Monitor Serial (115200);
-- (opcional, se for usar a API) um endpoint público da Aula 14.
+- (opcional, se for usar a API) um **endpoint público** da Aula 14 — de onde
+  virá a "outra informação" pela internet.
+
+> ⚠️ **Não precisa comprar nada específico para esta aula.** Use o que já tem
+> das aulas anteriores (um display qualquer que você já tenha, ou nenhum). As
+> etapas foram pensadas para funcionar com qualquer display (ou nenhum) e com
+> qualquer API pública simples.
 
 ## Ligação
 
@@ -279,9 +307,14 @@ segundo) num `buffer`. Esse é um jeito comum de formatar hora em C/C++.
 **Teste:** o Serial mostra a hora correta a cada segundo. Se mostrar
 `--:--:--`, aguarde alguns segundos para o NTP sincronizar.
 
+> **Deixe claro:** a hora **não é calculada pelo ESP32** e **não vem de
+> nenhum sensor** — ela é **baixada da internet** de um **servidor de hora**
+> (aqui, o NTP). É mais uma "leitura feita na web", como a API da Aula 14.
+
 > Para a **outra informação** (temperatura etc.), você pode **reaproveitar**
-> o HTTP/JSON da Aula 14 numa função `buscarInfo()`. Fica opcional — o foco
-> desta aula é a **integração**, não uma API específica.
+> o HTTP/JSON da Aula 14 numa função `buscarInfo()` — que também **busca a
+> informação na internet**. Fica opcional — o foco desta aula é a
+> **integração**, não uma API específica.
 
 ## Etapa 4 — Juntar tudo em um painel (integração)
 
@@ -401,15 +434,25 @@ void loop() {
 
   // Mostra conforme o modo
   if (modoAtual == MODO_HORA) {
-    mostrarTela("HORA (NTP)", horaFormatada());
+    mostrarTela("HORA (NTP)", horaFormatada());   // hora vem da internet (NTP)
   } else {
-    // Exemplo de "outra info": (coloque aqui o resultado da sua API/sensor)
-    mostrarTela("OUTRA INFO", "exemplo");
+    // OUTRA INFO também vem da INTERNET (Aula 14). Troque o texto abaixo pelo
+    // valor que o ESP32 baixar da API web. O "carregando..." é só um
+    // "lugar reserva" que compila e funciona, até você conectar sua API.
+    mostrarTela("OUTRA INFO (web)", "carregando...");
   }
 
   delay(500);
 }
 ```
+
+> **Importante:** a hora e a "OUTRA INFO" vêm **da internet**. Para mostrar um
+> dado de verdade vindo da web, use a função que você criou na Aula 14
+> (HTTP + JSON) **no lugar do "carregando..."** — por exemplo, guardando o
+> resultado em uma `String` e passando para `mostrarTela(...)`. Nada aqui é
+> lido de um sensor local. Se preferir adiar a API, o "carregando..." mostra um
+> texto fixo enquanto isso, mas saiba que o **objetivo** é exibir um dado
+> **baixado da internet**.
 
 Leia com calma — **não é um monstrinho**: são as funções das aulas anteriores
 uma do lado da outra.
@@ -513,10 +556,13 @@ Agora, os desafios:
 
 1. **Limite a espera do Wi‑Fi**: troque o `while` por uma espera limitada
    (contador + `millis()`); se falhar, mostre `"Sem rede"` no display.
-2. **Outra informação de verdade**: no modo "OUTRA INFO", chame a sua
-   `buscarInfo()` da Aula 14 (HTTP/JSON) e mostre o valor (ex.: temperatura).
-3. **Recenture o painel**: adicione um `tela.fillScreen` e textos maiores para
-   deixar a hora bem visível.
+2. **Outra informação de verdade (da internet)**: no modo "OUTRA INFO",
+   chame a sua `buscarInfo()` da Aula 14 (HTTP/JSON) e mostre o valor baixado
+   da web (ex.: a temperatura que um servidor devolve). Lembre: esse dado
+   **vem de um servidor na internet**, não de um sensor na sua bancada.
+3. **Deixe o painel mais bonito**: use `tela.fillScreen` (Aula 11) para
+   limpar o fundo e aumente o texto (`tela.setTextSize`) e a posição
+   (`tela.setCursor`) para a hora ficar bem visível.
 
 > Relembre a regra de ouro deste curso: **partes pequenas, cada uma
 > funcionando, somadas aos poucos.** É assim que se constrói qualquer
