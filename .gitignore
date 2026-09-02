@@ -1,0 +1,17 @@
+# Sistemas
+.DS_Store
+Thumbs.db
+
+# Arduino / compilação
+build/
+*.o
+*.elf
+*.bin
+*.a
+
+# Segredos — nunca commitar
+*.env
+.env
+secrets.*
+*.key
+*.pem
