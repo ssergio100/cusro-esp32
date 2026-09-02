@@ -145,8 +145,12 @@ específica, e ele fica ali fazendo aquilo, sozinho, por muito tempo.
 
 Olhando para sua placa, tente encontrar:
 
-- **O chip ESP32**: um "quadradinho" preto, geralmente com uma antena
-  metálica ao lado (para o Wi-Fi).
+- **O chip ESP32**: pode aparecer de dois jeitos, dependendo da placa. Em
+  algumas placas você vê um "quadradinho" preto; em outras — as mais comuns
+  — o chip fica **escondido embaixo de uma "tampa" metálica** (um bloco
+  prateado). Em muitos modelos há **dois** chips: o ESP32 e um chip de
+  **memória** ao lado. Geralmente há também uma **antena metálica** (para o
+  Wi-Fi/Bluetooth).
 - **A porta USB**: por onde ligamos o cabo. Ela alimenta a placa e também é
   o "cano" por onde enviamos programas e recebemos mensagens.
 - **Os pinos (GPIO)**: fileiras de furos/terminais metálicos nas laterais.
