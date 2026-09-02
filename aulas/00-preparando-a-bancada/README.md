@@ -283,4 +283,4 @@ Nesta aula preparamos a base:
 Agora que a bancada está pronta, vamos finalmente escrever nosso **primeiro
 programa do zero** — e entender, linha por linha, o que cada parte faz.
 
-Nos vemos na Aula 01. 🚀
+Nos vemos na [Aula 01](../01-primeiro-programa/README.md). 🚀

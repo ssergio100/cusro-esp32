@@ -283,4 +283,4 @@ para displays e periféricos que precisam de **velocidade**, existe outro
 barramento: o **SPI**, que usa **mais fios** — e é o que vamos usar para o
 grande display gráfico da Aula 11.
 
-Nos vemos na Aula 10.
+Nos vemos na [Aula 10](../10-spi/README.md).

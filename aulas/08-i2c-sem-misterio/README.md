@@ -290,4 +290,4 @@ Agora que sabemos **encontrar** um dispositivo e seu endereço, vamos usar
 um dispositivo I2C de verdade — como um display ou sensor — para **ler e
 escrever** informações úteis.
 
-Nos vemos na Aula 09.
+Nos vemos na [Aula 09](../09-usando-um-dispositivo-i2c/README.md).

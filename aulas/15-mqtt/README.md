@@ -450,4 +450,4 @@ Nosso ESP32 já "fica de olho" em botões checando a cada volta do `loop()`.
 Mas existe um jeito de ele ser avisado **na hora** quando algo acontece — as
 **interrupções**. Vamos ver isso na próxima aula.
 
-Nos vemos na Aula 16.
+Nos vemos na [Aula 16](../16-interrupcoes/README.md).

@@ -338,4 +338,4 @@ Agora que sabemos que um GPIO pode ser **entrada**, vamos fazer o ESP32
 **escutar o mundo**: vamos ler um **botão** e entender como a placa percebe
 quando algo foi pressionado.
 
-Nos vemos na Aula 03.
+Nos vemos na [Aula 03](../03-lendo-um-botao/README.md).

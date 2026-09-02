@@ -308,4 +308,4 @@ MQTT) e sem fio direto (Bluetooth). Falta um último tipo de comunicação:
 **áudio digital**. Na próxima aula, veremos como o ESP32 pode **tocar som**
 usando **I2S**.
 
-Nos vemos na Aula 22.
+Nos vemos na [Aula 22](../22-audio-digital/README.md).

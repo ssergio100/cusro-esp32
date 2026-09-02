@@ -367,4 +367,4 @@ O botão funciona — mas o nosso programa fica "preso" esperando enquanto usa
 `delay()`, o que atrapalha quando queremos fazer **várias coisas ao mesmo
 tempo**. Vamos resolver isso na próxima aula.
 
-Nos vemos na Aula 04.
+Nos vemos na [Aula 04](../04-fazendo-mais-de-uma-coisa/README.md).

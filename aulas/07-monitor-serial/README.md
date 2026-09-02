@@ -297,4 +297,4 @@ aprender a fazer o ESP32 conversar com **outros dispositivos** usando um
 barramento chamado **I2C** — que permite conectar vários componentes com
 poucos fios.
 
-Nos vemos na Aula 08.
+Nos vemos na [Aula 08](../08-i2c-sem-misterio/README.md).

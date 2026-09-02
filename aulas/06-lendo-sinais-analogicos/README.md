@@ -234,4 +234,4 @@ Até aqui o Monitor Serial apareceu várias vezes para ver números. Vamos dar
 um passo atrás e **entender essa ferramenta a fundo** — como usá-la para
 diagnosticar problemas e "enxergar" o que o programa está pensando.
 
-Nos vemos na Aula 07.
+Nos vemos na [Aula 07](../07-monitor-serial/README.md).

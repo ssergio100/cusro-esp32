@@ -336,4 +336,4 @@ Nesta aula:
 Agora que temos uma tela colorida, vamos dar ao ESP32 o **superpoder de se
 comunicar sem fio**: vamos conectá-lo ao **Wi‑Fi** e a uma rede.
 
-Nos vemos na Aula 12.
+Nos vemos na [Aula 12](../12-wi-fi/README.md).

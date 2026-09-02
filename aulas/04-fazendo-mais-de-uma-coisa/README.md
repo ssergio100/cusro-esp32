@@ -360,4 +360,4 @@ Agora sabemos ligar, desligar e piscar com ritmo. Mas até aqui só usamos dois
 estados (aceso/apagado). Vamos aprender a **controlar a intensidade** — como
 fazer um LED brilhar em vários níveis, não só ligar ou desligar.
 
-Nos vemos na Aula 05.
+Nos vemos na [Aula 05](../05-controle-de-intensidade/README.md).

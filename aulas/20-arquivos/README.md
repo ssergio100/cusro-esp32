@@ -312,4 +312,4 @@ caminho sem fio que **não precisa de rede**: o **Bluetooth** — feito para
 conectar o ESP32 **diretamente** ao celular ou a outros dispositivos, sem
 roteador. Vamos conhecer isso na próxima aula.
 
-Nos vemos na Aula 21.
+Nos vemos na [Aula 21](../21-bluetooth/README.md).

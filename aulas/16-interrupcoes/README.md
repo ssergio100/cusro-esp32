@@ -255,4 +255,4 @@ Vimos o `millis()` (Aula 04) e agora as interrupções. Existe ainda outra
 ferramenta de tempo: os **timers** — que podem até **gerar interrupções**
 periodicamente. Vamos diferenciar tudo isso na próxima aula.
 
-Nos vemos na Aula 17.
+Nos vemos na [Aula 17](../17-timers/README.md).

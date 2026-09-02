@@ -196,4 +196,4 @@ ela continue lá **depois de desligar e religar**? A **Flash** guarda isso, mas
 existe um jeito fácil do ESP32 de guardar pequenos dados permanentes: o
 **NVS/Preferences**. Vamos aprender na próxima aula.
 
-Nos vemos na Aula 19.
+Nos vemos na [Aula 19](../19-salvando-configuracoes/README.md).

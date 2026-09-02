@@ -314,4 +314,4 @@ Agora que sabemos controlar o brilho de uma **saída**, vamos aprender a
 **ler valores do mundo real**: como o ESP32 entende um sinal que não é
 simplesmente ligado/desligado, mas pode ter muitos níveis.
 
-Nos vemos na Aula 06.
+Nos vemos na [Aula 06](../06-lendo-sinais-analogicos/README.md).

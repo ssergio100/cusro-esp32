@@ -370,4 +370,4 @@ HTTP serve para pedidos pontuais. Mas, em IoT, muitas vezes queremos uma
 conversa contínua entre dispositivos. É aí que entra o **MQTT** — um
 protocolo feito para isso, com "publicar" e "assinar" mensagens.
 
-Nos vemos na Aula 15.
+Nos vemos na [Aula 15](../15-mqtt/README.md).

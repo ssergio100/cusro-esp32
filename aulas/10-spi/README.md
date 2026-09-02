@@ -219,4 +219,4 @@ Nesta aula:
 Agora que entendemos o SPI, vamos **ligar um display gráfico ST7789 de
 verdade** e mostrar **texto, formas e uma imagem** na tela.
 
-Nos vemos na Aula 11.
+Nos vemos na [Aula 11](../11-display-grafico/README.md).

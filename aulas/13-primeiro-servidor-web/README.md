@@ -305,4 +305,4 @@ Agora o ESP32 **responde** a pedidos. O próximo passo é inverter o jogo: o
 ESP32 **fazendo pedidos** para servidores externos — buscando informações de
 **APIs** na internet.
 
-Nos vemos na Aula 14.
+Nos vemos na [Aula 14](../14-esp32-conversando-com-servidores/README.md).

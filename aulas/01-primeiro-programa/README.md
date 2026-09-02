@@ -350,4 +350,4 @@ Nesta aula:
 Agora que ligamos e desligamos um pino, vamos **entender os pinos a fundo**
 — quais usar, quais exigem cuidado e por que o ESP32 trabalha com 3,3 V.
 
-Nos vemos na Aula 02.
+Nos vemos na [Aula 02](../02-entendendo-os-pinos/README.md).

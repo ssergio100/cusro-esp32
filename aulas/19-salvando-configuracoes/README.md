@@ -277,4 +277,4 @@ Salvamos valores pequenos. Mas e se quisermos salvar **arquivos inteiros** —
 como textos, imagens ou dados de configuração grandes? Para isso existe o
 **LittleFS**: o ESP32 pode criar e ler **arquivos** como um computador.
 
-Nos vemos na Aula 20.
+Nos vemos na [Aula 20](../20-arquivos/README.md).

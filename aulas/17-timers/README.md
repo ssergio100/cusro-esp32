@@ -259,4 +259,4 @@ bastidores. Na próxima aula vamos olhar **dentro do ESP32** e entender a
 **memória**: existem diferentes tipos, e saber disso ajuda a escrever
 programas que não travam com projetos grandes.
 
-Nos vemos na Aula 18.
+Nos vemos na [Aula 18](../18-memoria/README.md).

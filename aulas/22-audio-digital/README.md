@@ -330,4 +330,4 @@ Você já conhece quase todos os blocos do ESP32: entradas, saídas, tempo,
 comunicação (fios, internet, sem fio) e até áudio. Falta **juntar tudo** em
 um projeto real. Essa é a nossa última grande parada: o **projeto integrado**.
 
-Nos vemos na Aula 23.
+Nos vemos na [Aula 23](../23-projeto-integrado/README.md).

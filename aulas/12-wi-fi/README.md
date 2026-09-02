@@ -271,4 +271,4 @@ Nesta aula:
 Agora que o ESP32 está na rede com um IP, vamos transformá-lo em um
 **servidor web**: uma página acessível pelo navegador que controla um LED.
 
-Nos vemos na Aula 13.
+Nos vemos na [Aula 13](../13-primeiro-servidor-web/README.md).
